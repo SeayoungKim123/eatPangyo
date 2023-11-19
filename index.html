@@ -13,7 +13,7 @@
     <span>판교 맛집 리스트</span>
   </div>
   <div>
-    <span>버전 정보 2023-11-19 18:15</span>
+    <span>버전 정보 2023-11-19 18:18</span>
   </div>
 </header>
 
@@ -22,13 +22,12 @@
   <table border="1" id="resTable">
   </table>
 
-
   <script>
   // JavaScript를 사용하여 데이터 동적으로 추가
   var table = document.getElementById("resTable");
 
   // Fetch data from the JSON file
-  fetch('resList20131119.json')
+  fetch('resList20231119.json')
     .then(response => response.json())
     .then(data => {
       // 헤더 행 추가
@@ -49,8 +48,6 @@
       });
     })
 </script>
-
-
 
 
 
