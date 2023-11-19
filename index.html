@@ -6,8 +6,7 @@
 
 <header class="header">
   <div>
-    <h1> <a href="index.html">판교를 맛보다</h1>
-  
+    <h1><a href="index.html">판교를 맛보다</h1>
   </div>
   <div>
     <span>판교 맛집 리스트</span>
@@ -24,33 +23,37 @@
   </table>
 
   <script>
-  // JSON 데이터 예시
-  var jsonData = [
-      { "name": "John", "age": 25, "city": "New York" },
-      { "name": "Alice", "age": 30, "city": "Paris" },
-      { "name": "Bob", "age": 22, "city": "London" }
-  ];
+document.addEventListener("DOMContentLoaded", function () {
+    // JSON 파일 경로
+    var jsonFilePath = 'data.json';
 
-  // 동적으로 테이블 생성
-  var table = document.getElementById("myTable");
+    // JSON 파일을 가져오는 fetch 함수 사용
+    fetch(jsonFilePath)
+        .then(response => response.json())  // JSON 형태로 변환
+        .then(data => {
+            // 가져온 데이터를 사용하여 동적으로 테이블 생성
+            var table = document.getElementById("myTable");
 
-  // 헤더 행 추가
-  var headerRow = table.insertRow(0);
-  for (var key in jsonData[0]) {
-      var th = document.createElement("th");
-      th.innerHTML = key;
-      headerRow.appendChild(th);
-  }
+            // 헤더 행 추가
+            var headerRow = table.insertRow(0);
+            for (var key in data[0]) {
+                var th = document.createElement("th");
+                th.innerHTML = key;
+                headerRow.appendChild(th);
+            }
 
-  // 데이터 행 추가
-  for (var i = 0; i < jsonData.length; i++) {
-      var row = table.insertRow(i + 1); // 헤더 행 이후부터 데이터 행 추가
-      for (var key in jsonData[i]) {
-          var cell = row.insertCell();
-          cell.innerHTML = jsonData[i][key];
-      }
-  }
-  </script>
+            // 데이터 행 추가
+            data.forEach(function(item, index) {
+                var row = table.insertRow(index + 1);
+                for (var key in item) {
+                    var cell = row.insertCell();
+                    cell.innerHTML = item[key];
+                }
+            });
+        })
+        .catch(error => console.error('Error fetching JSON:', error));
+});
+</script>
 
 </body>
 
