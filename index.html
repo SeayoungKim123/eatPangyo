@@ -43,7 +43,7 @@
         var row = table.insertRow(index + 1);
         for (var key in item) {
           var cell = row.insertCell();
-          cell.innerHTML = item[key];
+          cell.innerHTML = item[key] || "N/A";
         }
       });
     })
