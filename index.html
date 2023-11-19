@@ -12,7 +12,7 @@
     <span>판교 맛집 리스트</span>
   </div>
   <div>
-    <span>버전 정보 2023-11-19 16:58</span>
+    <span>버전 정보 2023-11-19 17:19</span>
   </div>
 </header>
 
@@ -27,6 +27,10 @@
   var table = document.getElementById("1st Table");
   var data = 'data.json'
 
+  // JSON 파일을 가져오는 fetch 함수 사용
+  fetch(data)
+      .then(response => response.json())  // JSON 형태로 변환
+
   // 헤더 행 추가
   var headerRow = table.insertRow(0);
   for (var key in data[0]) {
@@ -35,15 +39,15 @@
       headerRow.appendChild(th);
   }
 
-
-  // 데이터를 테이블에 추가
-  for (var i = 0; i < data.length; i++) {
-      var row = table.insertRow(-1);
-      var cell1 = row.insertCell(0);
-      var cell2 = row.insertCell(1);
-      cell1.innerHTML = data[i].name;
-      cell2.innerHTML = data[i].age;
-  }
+  // 데이터 행 추가
+  data.forEach(function(item, index) {
+      var row = table.insertRow(index + 1);
+      for (var key in item) {
+          var cell = row.insertCell();
+          cell.innerHTML = item[key];
+      }
+  });
+  
   </script>
 
 
