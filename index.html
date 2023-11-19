@@ -12,18 +12,50 @@
     <span>판교 맛집 리스트</span>
   </div>
   <div>
-    <span>버전 정보 2023-11-19 17:05</span>
+    <span>버전 정보 2023-11-19 17:13</span>
   </div>
 </header>
 
 <body>
+
+  <table border="1" id="1st Table">
+      <tr>
+          <th>이름</th>
+          <th>나이</th>
+      </tr>
+  </table>
+
+
+  <script>
+  // JavaScript를 사용하여 데이터 동적으로 추가
+  var table = document.getElementById("1st Table");
+
+  var data = 'data.json'
+  // 예시 데이터
+  
+
+  // 데이터를 테이블에 추가
+  for (var i = 0; i < data.length; i++) {
+      var row = table.insertRow(-1);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      cell1.innerHTML = data[i].name;
+      cell2.innerHTML = data[i].age;
+  }
+  </script>
+
+
+
+
+
+
   <table border="1" id="myTable">
   </table>
 
   <script>
 document.addEventListener("DOMContentLoaded", function () {
     // JSON 파일 경로
-    var jsonFilePath = 'list.json';
+    var jsonFilePath = 'data.json';
 
     // JSON 파일을 가져오는 fetch 함수 사용
     fetch(jsonFilePath)
