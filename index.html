@@ -13,7 +13,7 @@
     <span>판교 맛집 리스트</span>
   </div>
   <div>
-    <span>버전 정보 2023-11-19 18:29</span>
+    <span>버전 정보 2023-11-19 18:30</span>
   </div>
 </header>
 
@@ -43,7 +43,7 @@
         var row = table.insertRow(index + 1);
         for (var key in item) {
           var cell = row.insertCell();
-          cell.innerHTML = item[key] || "N/A";
+          cell.innerHTML = item[key] || "";
         }
       });
     })
