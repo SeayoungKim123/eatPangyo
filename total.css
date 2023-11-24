@@ -1,6 +1,7 @@
 header {
     margin: 10px;
     padding: 5px;
+    background-color: : #e1e1e1;
 }
 
 body {
@@ -14,6 +15,6 @@ table {
 }
 
 th {
-    background-color: : #e1e1e1
-    color: #ffffff
+    background-color: : #e1e1e1;
+    color: #ffffff;
 }
