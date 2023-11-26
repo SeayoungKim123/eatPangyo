@@ -58,8 +58,6 @@ $nameList[resNum].appendChild($aLink);
 
 
 //마지막 컬럼 삭제하기
-let $nameList = document.querySelectorAll('#resTable tr :nth-child(1)'); // 각 행 첫번째 요소 가져옴
-
 //3번. 전체 테이블에 반복
 for (let removeNum = 0;
 removeNum < $nameList.length;
