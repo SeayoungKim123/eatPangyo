@@ -25,8 +25,9 @@ fetch('resList.json')
 
 
 //링크 생성은 여기부터
-let $nameList = document.querySelectorAll('#resTable tr :nth-child(1)'); // 각 행 첫번째 요소 가져옴
-
+document.addEventListener('DOMContentLoaded', function() {
+    let $nameList = document.querySelectorAll('#resTable tr :nth-child(1)');
+});
 
 // 3번. 이걸 모든 테이블에 적용하기
 for (let resNum = 1;
