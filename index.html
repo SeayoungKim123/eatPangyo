@@ -5,7 +5,10 @@
   <title>판교를 맛보다</title>
 
   <link rel="stylesheet" href="total.css">
+  <script src="script.js" defer></script>
+
 </head>
+
 
 <header class="header">
   <div>
@@ -15,43 +18,15 @@
     <span>판교 맛집 리스트</span>
   </div>
   <div>
-    <span>버전 정보 2023-11-24 12:23</span>
+    <span>버전 정보 2023-11-19 16:58</span>
   </div>
 </header>
 
 <body>
-
-  <table border="1" id="resTable">
-  </table>
-
-  <script>
-  // JavaScript를 사용하여 데이터 동적으로 추가
-  var table = document.getElementById("resTable");
-
-  // Fetch data from the JSON file
-  fetch('resList.json')
-    .then(response => response.json())
-    .then(data => {
-      var headerRow = table.insertRow(0);
-      for (var key in data[0]) {
-        var th = document.createElement("th");
-        th.innerHTML = key;
-        headerRow.appendChild(th);
-      }
-
-
-      // 데이터 행 추가
-      data.forEach(function(item, index) {
-        var row = table.insertRow(index + 1);
-        for (var key in item) {
-          var cell = row.insertCell();
-          cell.innerHTML = item[key] || "";
-        }
-      });
-    })
-</script>
-
-
+  <div id='restaurant'>
+    <table border="1" id="resTable">
+    </table>
+  </div>
 
 
   <table border="1" id="myTable">
