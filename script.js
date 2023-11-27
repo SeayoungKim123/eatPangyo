@@ -1,5 +1,5 @@
 // JavaScript를 사용하여 데이터 동적으로 추가
-var table = document.getElementById("resTable");
+let table = document.getElementById("resTable");
 
 // Fetch data from the JSON file
 fetch('resList.json')
